@@ -1,7 +1,6 @@
 package com.exercicios.exercicio.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -9,6 +8,8 @@ import java.time.LocalDate;
 @Table(name = "tb_tarefa")
 public class TarefaModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
     private LocalDate dataVencimento;
