@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "tb_tarefa")
+@Entity // definir que uma classe é uma tabela de um banco de dados relacional
+@Table(name = "tb_tarefa") // Alterar o nome da tabela do banco de dados
 public class TarefaModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //definir a chave primária da tabela
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // informar ao banco de dados que ele deve preencher automaticamente um valor a ser preenchido na chave primaria
     private Long id;
     private String descricao;
     private LocalDate dataVencimento;

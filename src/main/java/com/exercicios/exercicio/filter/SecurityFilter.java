@@ -7,10 +7,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
-@EnableWebSecurity
+@EnableWebSecurity // Ativar recursos de segurança do spring
 public class SecurityFilter {
 
-    @Bean
+    @Bean // registrar um objeto como um componente do spring boot
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(csrf -> csrf.disable())

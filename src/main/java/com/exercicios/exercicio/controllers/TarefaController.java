@@ -8,24 +8,24 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping(path = "/produtos")
+@Controller // Gerenciar o fluxo de navegação
+@RequestMapping(path = "/produtos") // Definir uma rota base da url
 public class TarefaController {
 
-    @Autowired
+    @Autowired // Injetar dependecias automaticamente
     TarefaService tarefaService;
 
-    @PostMapping
-    public TarefaModel salvar(@RequestBody TarefaModel tarefaModel) {
+    @PostMapping // mapear requisições http do tipo POST
+    public TarefaModel salvar(@RequestBody /* Converte o body do json em um objeto java */TarefaModel tarefaModel) {
         return tarefaService.save(tarefaModel);
     }
 
-    @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id) {
+    @DeleteMapping("/{id}") // mapear requisições http do tipo DELETE
+    public void deletar(@PathVariable /* extrair um valor diretamente da url  */ Long id) {
         tarefaService.deleteById(id);
     }
 
-    @GetMapping
+    @GetMapping // mapear requisições http do tipo GET
     public List<TarefaModel> listar() {
         return tarefaService.findAll();
     }

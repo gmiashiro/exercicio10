@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service // marcar a classe como um componente de servico, onde será executado a regra de negócio
 public class TarefaService {
 
     @Autowired
